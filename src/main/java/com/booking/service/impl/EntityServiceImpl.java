@@ -63,9 +63,12 @@ public class EntityServiceImpl implements EntityService {
 	
 	@Override
 	public QueAnsResponse getQuestionsByEntityCode(Optional<String> entityCode, Optional<String> quesCategory) {
-		if(entityCode.isPresent() && quesCategory.isPresent())			
-				return new QueAnsResponse(questionnaireRepository.findByFkEntityCodeAndQuestionCategory(
-					entityCode.get(),quesCategory.get()), "Success", null);
+		if(entityCode.isPresent() && quesCategory.isPresent()) {
+			List<Questionnaire> questions = questionnaireRepository.findByFkEntityCodeAndQuestionCategory(
+					entityCode.get(),quesCategory.get());
+			questions = questions.stream().filter(q-> q.isActiveInd()).toList();
+			return new QueAnsResponse(questions, "Success", null);
+		}
 		else if(entityCode.isPresent())			
 			return new QueAnsResponse(questionnaireRepository.findByFkEntityCode(
 				entityCode.get()), "Success", null);

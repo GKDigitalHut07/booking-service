@@ -184,8 +184,12 @@ public class BookingServiceImpl implements QueAnsService {
 
 	@Override
 	public QueAnsResponse delete(QueAnsRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Booking> booking = bookingRepository.findById(request.getId());
+		if(booking.isPresent()) {
+			booking.get().setIsDeleted(true);
+			bookingRepository.save(booking.get());
+		}
+		return new QueAnsResponse("Success", "Successfully deleted the booking", null);
 	}
 	
 

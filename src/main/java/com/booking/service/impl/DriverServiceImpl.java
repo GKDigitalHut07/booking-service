@@ -1,8 +1,5 @@
 package com.booking.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -13,13 +10,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import com.booking.entity.DriverAnswers;
 import com.booking.entity.Parent;
 import com.booking.entity.Driver;
 import com.booking.entity.CustomerEntity;
-import com.booking.entity.Questionnaire;
 import com.booking.model.request.QueAnsRequest;
 import com.booking.model.response.QueAnsResponse;
 import com.booking.repository.DriverRepository;

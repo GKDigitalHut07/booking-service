@@ -1,7 +1,6 @@
 package com.booking.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,7 +11,6 @@ import org.springframework.util.CollectionUtils;
 import com.booking.entity.Answers;
 import com.booking.entity.Parent;
 import com.booking.entity.Questionnaire;
-import com.booking.model.request.AnswerRequest;
 import com.booking.model.request.QueAnsRequest;
 import com.booking.model.response.QueAnsResponse;
 

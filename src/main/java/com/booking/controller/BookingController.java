@@ -1,6 +1,5 @@
 package com.booking.controller;
 
-import java.security.Principal;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.booking.model.request.AnswerRequest;
 import com.booking.model.request.QueAnsRequest;
 import com.booking.model.response.QueAnsResponse;
 import com.booking.service.QueAnsService;
@@ -25,7 +23,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/v1.0")
@@ -66,4 +63,5 @@ public class BookingController {
 	public QueAnsResponse updateBookingDetailsById(@RequestBody QueAnsRequest request) {
 		return bookingService.update(request);
 	}
+	
 }

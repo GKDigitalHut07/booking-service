@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="driver_answers",schema="booking")
-public class DriverAnswers{
+public class DriverAnswers implements Answers{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="answer_id",nullable=false)
@@ -22,5 +22,10 @@ public class DriverAnswers{
 	private String answer;
 	@Column(name="fk_driver_id")
 	private Long driverId;
+	
+	@Override
+	public Long getId() {
+		return this.getDriverId();
+	}
 
 }

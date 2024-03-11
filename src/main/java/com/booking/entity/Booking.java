@@ -36,6 +36,8 @@ public class Booking extends AuditEntity<String> implements Parent{
 	private String approvedBy;
 	@Column(name = "approved_at")
 	private Date approvedAt;
+	@Column(name = "is_deleted")
+	private Boolean isDeleted;
 	@Column(name = "fk_entity_code", nullable = false)
 	private String fkEntityCode;
 	@ManyToOne(cascade = CascadeType.ALL)

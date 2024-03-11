@@ -20,6 +20,7 @@ public class QuestionnaireDto {
 	private boolean isActiveInd;
 	private boolean isVisible;
 	private boolean isRequiredField;
+	private String logicalCondition;
 	private Integer columnOrderId;
 
 }

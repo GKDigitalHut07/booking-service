@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.booking.enumeration.Query;
+import com.booking.model.CusQuery;
 import com.booking.model.EntityDto;
 import com.booking.model.QuestionnaireDto;
-import com.booking.model.request.AnswerRequest;
 import com.booking.model.request.EntityRequest;
 import com.booking.model.response.EntityResponse;
 import com.booking.model.response.QueAnsResponse;
@@ -61,5 +62,6 @@ public class EntityController {
 			@RequestParam(name = "questionCategory",required = false) Optional<String> questionCategory) {
 		return entityService.getQuestionsByEntityCode(entityCode, questionCategory);
 	}
+	
 
 }

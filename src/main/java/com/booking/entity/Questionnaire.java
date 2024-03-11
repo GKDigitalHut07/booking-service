@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Data
 //@EqualsAndHashCode(callSuper = false)
@@ -49,6 +48,8 @@ public class Questionnaire extends AuditEntity<String> {
 	private boolean isVisible;
 	@Column(name="is_required_field")
 	private boolean isRequiredField;
+	@Column(name="logical_condition")
+	private String logicalCondition;
 	
 	@Column(name="column_order_id")
 	private Integer columnOrderId;

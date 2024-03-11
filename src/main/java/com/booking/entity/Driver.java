@@ -1,6 +1,6 @@
 package com.booking.entity;
 
-import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -20,7 +20,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "driver", schema = "booking")
-public class Driver extends AuditEntity<String>{
+public class Driver extends AuditEntity<String> implements Parent{
 	
 	
 	@Id
@@ -36,7 +36,16 @@ public class Driver extends AuditEntity<String>{
 	@JoinColumn(name = "fk_driver_id",referencedColumnName = "driver_id" )
 	private Set<DriverAnswers> answers;
 	
-	
+	@Override
+	public Long getId() {
+		return this.getDriverId();
+	}
+
+
+	@Override
+	public List<Answers> getPAnswers() {
+		return this.answers.stream().map(Answers.class::cast).toList();
+	}
 		
 
 }

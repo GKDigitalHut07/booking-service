@@ -22,5 +22,10 @@ public class BookingAnswers implements Answers{
 	private String answer;
 	@Column(name="fk_booking_id")
 	private Long bookingId;
+	
+	@Override
+	public Long getId() {
+		return this.getBookingId();
+	}
 
 }

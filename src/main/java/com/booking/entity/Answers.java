@@ -6,6 +6,6 @@ public interface Answers {
 	Long getAnswerId();
 	String getQuestionCode();
 	String getAnswer();
-	Long getBookingId();
+	Long getId();
 
 }
